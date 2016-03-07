@@ -3,6 +3,7 @@ package com.tie_vilsama.vilsamatestapp;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -106,6 +107,11 @@ public final class LoginActivity extends Activity {
             super.onPostExecute(aBoolean);
             progressDialog.dismiss();
             if(aBoolean){
+                // TODO open shared preferences
+                SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.preferences_file_name), MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean(getString(R.string.is_authenticated), Boolean.TRUE);
+                editor.commit();
                 Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                 LoginActivity.this.startActivity(intent);
             }else {

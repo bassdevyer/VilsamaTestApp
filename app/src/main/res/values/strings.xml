@@ -9,6 +9,11 @@
     <string name="activity_login_authenticating_message">Autenticando...</string>
     <string name="activity_login_wrong_credentials_message">Usuario o contraseña incorrectos</string>
 
+    <string name="is_authenticated">isAuthenticated</string>
+
+    <string name="preferences_file_name">com.tie_vilsama.vilsamatestapp.preferences</string>
+
     <string name="activity_menu_test_option">Opción</string>
+    <string name="activity_menu_logout_msg">Cerrar Sesión</string>
 
 </resources>

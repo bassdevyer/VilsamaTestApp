@@ -3,7 +3,9 @@ package com.tie_vilsama.vilsamatestapp;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -101,8 +103,17 @@ public class SplashActivity extends Activity {
                     break;
                 }
                 default:{
-                    Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                    // Check shared preferences for user authentication status
+                    SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.preferences_file_name), MODE_PRIVATE);
+                    boolean isAuthenticated = sharedPreferences.getBoolean(getString(R.string.is_authenticated), Boolean.FALSE);
+                    Intent intent;
+                    if(isAuthenticated){
+                        intent = new Intent(SplashActivity.this, MenuActivity.class);
+                    }else{
+                        intent = new Intent(SplashActivity.this, LoginActivity.class);
+                    }
                     SplashActivity.this.startActivity(intent);
+
                 }
             }
         }
