@@ -37,6 +37,7 @@ public class SplashActivity extends Activity {
 
     private class DBTask extends AsyncTask<Void, Void, Long>{
 
+        // TODO retrieve username and password from properties file
         private static final String USERNAME_VALUE = "user";
         private static final String PASSWORD_VALUE = "ee11cbb19052e40b07aac0ca060c23ee";
 

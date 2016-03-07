@@ -2,6 +2,7 @@ package com.tie_vilsama.vilsamatestapp;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -104,8 +105,20 @@ public final class LoginActivity extends Activity {
         protected void onPostExecute(Boolean aBoolean) {
             super.onPostExecute(aBoolean);
             progressDialog.dismiss();
-            Toast.makeText(LoginActivity.this, aBoolean.toString(), Toast.LENGTH_SHORT).show();
+            if(aBoolean){
+                Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                LoginActivity.this.startActivity(intent);
+            }else {
+                Toast.makeText(LoginActivity.this, LoginActivity.this.getString(R.string.activity_login_wrong_credentials_message), Toast.LENGTH_SHORT).show();
+                clearFields();
+            }
         }
+    }
+
+    private void clearFields(){
+        usernameEditText.getText().clear();
+        passwordEditText.getText().clear();
+        usernameEditText.requestFocus();
     }
 
 }
