@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Vilsama Test App</string>
+    <string name="loading_text">Cargando...</string>
+    <string name="error_message">Se ha presentado un error al inicializar los datos de la aplicación</string>
+    <string name="activity_login_username">Usuario</string>
+    <string name="activity_login_password">Contraseña</string>
+    <string name="activity_login_login">Iniciar Sesión</string>
 </resources>
