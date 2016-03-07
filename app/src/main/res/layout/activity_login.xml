@@ -19,7 +19,7 @@
             android:layout_marginBottom="24dp"
             android:layout_gravity="center_horizontal" />
 
-            <EditText android:id="@+id/input_email"
+            <EditText android:id="@+id/input_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -38,7 +38,8 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:padding="12dp"
-            android:text="@string/activity_login_login"/>
+            android:text="@string/activity_login_login"
+            android:onClick="login"/>
 
     </LinearLayout>
 </ScrollView>

@@ -5,4 +5,6 @@
     <string name="activity_login_username">Usuario</string>
     <string name="activity_login_password">Contraseña</string>
     <string name="activity_login_login">Iniciar Sesión</string>
+    <string name="activity_login_empty_username_message">El campo es obligatorio</string>
+    <string name="activity_login_authenticating_message">Autenticando...</string>
 </resources>

@@ -46,7 +46,7 @@ public class SplashActivity extends Activity {
         protected Long doInBackground(Void... params) {
             DBHelper dbHelper = new DBHelper(SplashActivity.this);
             SQLiteDatabase db = dbHelper.getReadableDatabase();
-
+            // FIXME remove
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
