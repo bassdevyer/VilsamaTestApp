@@ -107,7 +107,6 @@ public final class LoginActivity extends Activity {
             super.onPostExecute(aBoolean);
             progressDialog.dismiss();
             if(aBoolean){
-                // TODO open shared preferences
                 SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.preferences_file_name), MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean(getString(R.string.is_authenticated), Boolean.TRUE);

@@ -11,9 +11,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Space;
 
 import com.tie_vilsama.vilsamatestapp.database.DBContract.User;
 import com.tie_vilsama.vilsamatestapp.database.DBHelper;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 public class SplashActivity extends Activity {
 
@@ -39,9 +44,10 @@ public class SplashActivity extends Activity {
 
     private class DBTask extends AsyncTask<Void, Void, Long>{
 
-        // TODO retrieve username and password from properties file
-        private static final String USERNAME_VALUE = "user";
-        private static final String PASSWORD_VALUE = "ee11cbb19052e40b07aac0ca060c23ee";
+        private static final String USERNAME_TAG = "username";
+        private static final String PASSWORD_TAG = "password";
+        private String usernameValue = null;
+        private String passwordValue = null;
 
         private static final String LOG_TAG = "DBTask";
 
@@ -56,6 +62,17 @@ public class SplashActivity extends Activity {
                 Thread.interrupted();
             }
 
+            try {
+                InputStream inputStream = SplashActivity.this.getAssets().open(SplashActivity.this.getString(R.string.app_properties_file_name));
+                Properties properties = new Properties();
+                properties.load(inputStream);
+                usernameValue = properties.getProperty(USERNAME_TAG);
+                passwordValue = properties.getProperty(PASSWORD_TAG);
+            }
+            catch (IOException ex){
+                Log.e(LOG_TAG, "Cannot open app properties file!!!");
+                return new Long(-1);
+            }
             // Check user register existence
             String[] projection = {
                     User._ID,
@@ -64,7 +81,7 @@ public class SplashActivity extends Activity {
 
             String selection = User.COLUMN_NAME_USERNAME + " = ?";
 
-            String[] selectionArgs = {USERNAME_VALUE};
+            String[] selectionArgs = {usernameValue};
 
             Cursor cursor = db.query(User.TABLE_NAME, projection, selection, selectionArgs, null, null, null);
 
@@ -77,8 +94,8 @@ public class SplashActivity extends Activity {
             db = dbHelper.getWritableDatabase();
 
             ContentValues contentValues = new ContentValues();
-            contentValues.put(User.COLUMN_NAME_USERNAME, USERNAME_VALUE);
-            contentValues.put(User.COLUMN_NAME_PASSWORD, PASSWORD_VALUE);
+            contentValues.put(User.COLUMN_NAME_USERNAME, usernameValue);
+            contentValues.put(User.COLUMN_NAME_PASSWORD, passwordValue);
 
             Long newRowId = db.insert(User.TABLE_NAME, null, contentValues);
             if(newRowId == -1){

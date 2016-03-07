@@ -13,6 +13,8 @@
 
     <string name="preferences_file_name">com.tie_vilsama.vilsamatestapp.preferences</string>
 
+    <string name="app_properties_file_name">app.properties</string>
+
     <string name="activity_menu_test_option">Opción</string>
     <string name="activity_menu_logout_msg">Cerrar Sesión</string>
 
