@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Table">
+        <attr name="tableName" format="string" />
+        <attr name="shape" format="enum">
+            <enum name="square" value="0"/>
+            <enum name="round" value="1"/>
+        </attr>
+        <attr name="shapeColor" format="integer"/>
+        <attr name="textColor" format="integer"/>
+    </declare-styleable>
+</resources>

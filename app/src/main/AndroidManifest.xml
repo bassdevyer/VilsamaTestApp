@@ -7,8 +7,9 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"
-            android:noHistory="true"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:noHistory="true" />
         <activity
             android:name=".SplashActivity"
             android:noHistory="true">
@@ -18,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".TablesDistributionActivity"></activity>
     </application>
 
 </manifest>

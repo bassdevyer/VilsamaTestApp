@@ -11,27 +11,32 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_menu_test_option"/>
+        android:text="@string/activity_menu_test_option"
+        android:onClick="openTablesDistributionActivity"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_menu_test_option"/>
+        android:text="@string/activity_menu_test_option"
+        android:onClick="openTablesDistributionActivity"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_menu_test_option"/>
+        android:text="@string/activity_menu_test_option"
+        android:onClick="openTablesDistributionActivity"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_menu_test_option"/>
+        android:text="@string/activity_menu_test_option"
+        android:onClick="openTablesDistributionActivity"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_menu_test_option"/>
+        android:text="@string/activity_menu_test_option"
+        android:onClick="openTablesDistributionActivity"/>
 
 </LinearLayout>
 </ScrollView>
