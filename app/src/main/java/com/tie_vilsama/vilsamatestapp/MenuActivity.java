@@ -26,5 +26,6 @@ public class MenuActivity extends Activity {
         editor.commit();
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+        finish();
     }
 }
